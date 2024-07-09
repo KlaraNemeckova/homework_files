@@ -2,9 +2,9 @@ FILE_1 = "file_1.txt"
 FILE_2 = "file_2.txt"
 
 def compare_files(f1_name, f2_name):
-    with open("file_1.txt", "r") as f1_text:
+    with open("file_1.txt", "r", encoding="utf8") as f1_text:
         f1 = f1_text.readlines()
-    with open("file_2.txt", "r") as f2_text:
+    with open("file_2.txt", "r", encoding="utf8") as f2_text:
         f2 = f2_text.readlines()
 
     for line_1 in f1:
@@ -12,7 +12,7 @@ def compare_files(f1_name, f2_name):
             if line_1 != line_2:
                 pass
             elif line_1 == line_2:
-                print("Text v obou souborech je stejny.")
+                print(line_1)
             else:
                 print("kontrola")
 
