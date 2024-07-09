@@ -11,15 +11,11 @@ def compare_files(f1_name, f2_name):
     txt1_diff = " "
     txt2_diff = " "
     for line_1 in f1:
-        pass
-        #for line_2 in f2:
-            #if line_1 != line_2:
-                #txt1_diff += line_1
-                #txt2_diff += line_2
+        for line_2 in f2:
+            if line_1 != line_2:
+                txt1_diff += line_1
+                txt2_diff += line_2
 
     print(f"odlišný text v {FILE_1}: {txt1_diff}")
     print(f"odlišný text v {FILE_2}: {txt2_diff}")
 compare_files(FILE_1, FILE_2)
-
-
-
