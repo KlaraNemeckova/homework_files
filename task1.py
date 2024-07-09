@@ -16,6 +16,10 @@ def compare_files(f1_name, f2_name):
             #if line_1 != line_2:
                 #txt1_diff += line_1
                 #txt2_diff += line_2
+    for line_1,line_2 in zip(f1,f2):
+        if line_1 != line_2:
+            print(line_1)
+            print(line_2)
 
     print(f"odlišný text v {FILE_1}: {txt1_diff}")
     print(f"odlišný text v {FILE_2}: {txt2_diff}")
