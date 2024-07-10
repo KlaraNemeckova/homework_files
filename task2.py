@@ -60,15 +60,19 @@ def digits(source_text):
 
 if __name__ == '__main__':
     try:
-        char(FILE_INPUT)
-        lines(FILE_INPUT)
-        vowels(FILE_INPUT)
-        consonants(FILE_INPUT)
-        digits(FILE_INPUT)
-        def result(file_2):
+
+        def main(file_2):
             with open(file_2, "a+") as txt:
-                new_text = txt.write(str(char(FILE_INPUT)) + "\n")
-                print(new_text)
-        result(FILE_OUTPUT)
+                txt.write("v textu je " + str(char(FILE_INPUT)) + " znaků, "
+                          + str(lines(FILE_INPUT)) + " řádků, "
+                          + str(vowels(FILE_INPUT)) + " samohlásek, "
+                          + str(consonants(FILE_INPUT)) + " souhlásek, "
+                          + str(digits(FILE_INPUT)) + " číslic.")
+
+        main(FILE_OUTPUT)
+
     except:
         print("Error")
+
+
+
