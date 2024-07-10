@@ -21,14 +21,14 @@ def char(source_text):
         return char_count
 
 
-def lines (source_text):
+def lines(source_text):
     with open(source_text, "r") as txt:
-        line_count = 0
+        lines_count = 0
         lines = txt.readlines()
-        for l in lines:
-            line_count += 1
-        print(line_count)
-        return line_count
+        for l in lines:                  # na jeden řádek
+            lines_count += 1
+        print(lines_count)
+        return lines_count
 
 
 def vowels(source_text):
@@ -40,11 +40,27 @@ def vowels(source_text):
         return vowels_count
 
 
-def consonants (file_1, file_2):
-    pass
+def consonants(source_text):
+    with open(source_text, "r") as txt:
+        vow = "aeiouyAEIOUY"
+        find_vowels = txt.read()
+        consonants_count = 0
+        for c in find_vowels:
+            if c not in vow:            # dát do jedné funkce s vowels + if not digit
+                consonants_count += 1
+        print(consonants_count)
+        return consonants_count
 
-def digits (file_1, file_2):
-    pass
+
+def digits(source_text):
+    with open(source_text, "r") as txt:
+        digits = txt.read()
+        digits_count = 0
+        for i in digits:                # na jeden řádek
+            if i.isdigit():
+                digits_count += 1
+        print(digits_count)
+        return(digits_count)
 
 
 if __name__ == '__main__':
@@ -52,5 +68,7 @@ if __name__ == '__main__':
         char(FILE_INPUT)
         lines(FILE_INPUT)
         vowels(FILE_INPUT)
+        consonants(FILE_INPUT)
+        digits(FILE_INPUT)
     except:
         print("Error")
