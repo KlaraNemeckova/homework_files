@@ -1,6 +1,6 @@
 FILE = "f_original.txt"
 
-import re                       # regular expression
+import re                           # regular expression
 
 word = input("Hledané slovo: ")
 
@@ -11,15 +11,12 @@ def word_count(file_name):
         counter = 0
         try:
             for line in text:
-                n = len(re.findall(r"\b"+ word + r"\b", line))   # ---> jen celé slovo
+                n = len(re.findall(r"\b" + word + r"\b", line, re.IGNORECASE))   # ---> jen celé slovo
                 counter += n
-                print(counter)
-
-
-            #if counter != 0:
-                #print(f"´{word}´ se v textu vyskytuje {counter}x.")
-            #else:
-                #print("Zadané slovo se v textu nenachází.")
+            if counter != 0:
+                print(f"´{word}´ se v textu vyskytuje {counter}x.")
+            else:
+                print("Zadané slovo se v textu nenachází.")
         except:
             print("Chyba při načítání souboru")
 
