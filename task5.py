@@ -11,9 +11,12 @@ def word_count(file_name):
             for line in text:
                 if word in line:
                     counter += 1
-            print(counter)
+            if counter != 0:
+                print(f"´{word}´ se v textu vyskytuje {counter}x.")
+            else:
+                print("Zadané slovo se v textu nenachází.")
         except:
-            print("Zadané slovo se v textu nenachází.")
+            print("Chyba při načítání souboru")
 
 word_count(FILE)
 
