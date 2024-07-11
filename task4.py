@@ -7,8 +7,8 @@ def longest_line(file_name):
         new_line = ""
         for line in data:
             if len(line) > len(new_line):
-                print(line)
                 new_line = line
-            print(len(new_line) -1)
+        print("Nejdelší řádek je: " + new_line + "\na jeho délka je: " + str(len(new_line) - 1) + " znaků.")
+
 
 longest_line(FILE)
