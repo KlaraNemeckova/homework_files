@@ -1,19 +1,29 @@
 employee_list = [{
-    "name": "",
-    "age": "38"
+    "first name": "Lydia",
+    "last name" : "Parks",
+    "age": "38",
     "ID": "4522",
-    "email": "...@company.com",
+    "email": "l.parks@company.com",
 
 }, {
-    "name": "",
-    "age": "27"
+    "first name": "Simon",
+    "last name" : "Kinney",
+    "age": "27",
     "ID": "4535",
-    "email': "...@company.com",
+    "email":"s.kinney@company.com"
 
 }, {
-    "name": "",
-    "age": "41"
+    "first name": "Camilo",
+    "last name" : "Santiz",
+    "age": "41",
     "ID": "4538",
-    "email": "...@company.com",
+    "email": "c.santiz@company.com",
+
+},{
+    "first name": "Kristie",
+    "last name" : "Tsujimoto",
+    "age": "33",
+    "ID": "4541",
+    "email": "k.tsujimoto@company.com",
 
 }]
