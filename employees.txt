@@ -1,0 +1,19 @@
+employee_list = [{
+    "name": "",
+    "age": "38"
+    "ID": "4522",
+    "email": "...@company.com",
+
+}, {
+    "name": "",
+    "age": "27"
+    "ID": "4535",
+    "email': "...@company.com",
+
+}, {
+    "name": "",
+    "age": "41"
+    "ID": "4538",
+    "email": "...@company.com",
+
+}]
