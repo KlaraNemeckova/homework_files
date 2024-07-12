@@ -1,5 +1,8 @@
 FILE = "employees.txt"
 
+import json
+
+
 
 def load_data():
     pass
@@ -9,9 +12,20 @@ def edit_list():
     pass
 
 
-def add_employee():
-    pass
+def add_employee(file_name):
+    with open(file_name, "r+") as file:
+        employee_list = json.loads(file.read())
+        print(type(employee_list))
+        my_keys = ["first name", "last name", "age", "ID", "email"]
+        my_values = [input("first name: "), input("last name: "), input("age: "), input("ID: "), input("email: ")]
+        for key, value in zip(my_keys, my_values):
+            employee_list[key] = value
+        file.write(json.dumps(employee_list))
 
+        print(employee_list)
+
+
+add_employee(FILE)
 
 def delete_employee():
     pass
