@@ -9,31 +9,28 @@ def load_data(file_name):
         print(employee_list)
         for k, v in employee_list.items():
             print(k, v)
-load_data(FILE)
 
 
-def search_by_name(file_name):
+def edit_list(file_name):
     with open(file_name, "r+") as file:
         employee_list = json.load(file)
-        dict_low = json.dumps(employee_list)
-        dict_lowercase = json.loads(dict_low.lower())
-        print(dict_lowercase)
-        last_name = input("Příjmení zaměstnance: ").lower()
-        try:
-            for k1 in dict_lowercase.keys():
-                if last_name in dict_lowercase[k1].values():
-                    print(k1, dict_lowercase[k1])
-        except:
-            print("Chyba při načítání souboru")
-        file.write(json.dumps(employee_list))
+        emp_num = input("Zaměstnanec('emp_'): ")
+        user_choice = input("Editovat (1 - first name, 2 - last name, 3- age, 4 - email): ")
+        user_edit = input("Nový údaj: ")
+        if user_choice == 1:
+            new_list = employee_list.update({'emp1': {'first name': 'OOOO'}})
+            a = {"first name: " + user_edit}
+            for k1 in employee_list.keys():
+                k1 == emp_num
+                new_list = employee_list[k1][a]
+            print(new_list)
+        elif user_choice == 2:
+            pass
+        #elif user_choice == 3:
+        #elif user_choice == 4:
+
+        print(employee_list)
     # main()
-
-
-def edit_list():
-    pass
-
-    # main()
-
 
 
 def add_employee(file_name):
@@ -62,23 +59,25 @@ def delete_employee(file_name):
 def search_by_name(file_name):
     with open(file_name, "r+") as file:
         employee_list = json.load(file)
-        last_name = input("Příjmení zaměstnance: ")
+        dict_low = json.dumps(employee_list)
+        dict_lowercase = json.loads(dict_low.lower())
+        last_name = input("Příjmení zaměstnance: ").lower()
         try:
-            for k1 in employee_list.keys():
-                if last_name in employee_list[k1].values():
-                    print(k1, employee_list[k1])
+            for k1 in dict_lowercase.keys():
+                if last_name in dict_lowercase[k1].values():
+                    print(k1, dict_lowercase[k1])
         except:
-            print("Nenalezeno")
+            print("Chyba při načítání souboru")
+        file.write(json.dumps(employee_list))
+        # main()
 
-       # main()
 
-
-def select():
+def select(file_name):
     pass
     # main()
 
 
-def save_data():
+def save_data(file_name):
     pass
     # main()
 
