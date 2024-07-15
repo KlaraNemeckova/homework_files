@@ -6,10 +6,26 @@ FILE = "employees.txt"
 def load_data(file_name):
     with open(file_name, "r+") as file:
         employee_list = json.load(file)
-        for k, v in employee_list.items():           # for k1 in employee_list.keys():
-                                                     # print(k1)
-                                                     #print(employee_list[k1])
+        print(employee_list)
+        for k, v in employee_list.items():
             print(k, v)
+load_data(FILE)
+
+
+def search_by_name(file_name):
+    with open(file_name, "r+") as file:
+        employee_list = json.load(file)
+        dict_low = json.dumps(employee_list)
+        dict_lowercase = json.loads(dict_low.lower())
+        print(dict_lowercase)
+        last_name = input("Příjmení zaměstnance: ").lower()
+        try:
+            for k1 in dict_lowercase.keys():
+                if last_name in dict_lowercase[k1].values():
+                    print(k1, dict_lowercase[k1])
+        except:
+            print("Chyba při načítání souboru")
+        file.write(json.dumps(employee_list))
     # main()
 
 
@@ -69,7 +85,7 @@ def save_data():
 
 def main(file_name):
     while True:
-        print("""--MENU-- \n1 = načíst data ze souboru \n2 = editace \n3 = přidat zaměstnance \n4 = smazat zaměstnance 
+        print("""--MENU-- \n1 = načíst data ze souboru \n2 = editace \n3 = přidat zaměstnance \n4 = smazat zaměstnance
               \n5 = vyhledat podle příjmení \n6 = vybrat zaměstnance dle věku nebo počátečního písmena
               \n7 = uložit změny \n8 = ukončit program""")
 
@@ -78,17 +94,17 @@ def main(file_name):
         if choice == "1":
             load_data(FILE)
         elif choice == "2":
-            edit_list()
+            edit_list(FILE)
         elif choice == "3":
             add_employee(FILE)
         elif choice == "4":
             delete_employee(FILE)
         elif choice == "5":
-            search_by_name()
+            search_by_name(FILE)
         elif choice == "6":
-            select()
+            select(FILE)
         elif choice == "7":
-            save_data()
+            save_data(FILE)
         elif choice == "8":
             # save_data()
             break
